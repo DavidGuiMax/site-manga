@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explorar | MangaTide</title>
+  <link rel="stylesheet" href="./css/syle.css" />
+</head>
+<body>
+
+  <!-- Navbar fixa -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="./assets/Captura_de_Tela__6_-removebg-preview.png" alt="Logo MangaTide" />
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="Inicio.html">Início</a></li>
+        <li><a href="comunidade.html">Comunidade</a></li>
+        <li><a href="biblioteca.html">Biblioteca</a></li>
+        <li><a href="#" class="active">Explorar</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Espaço compensando a navbar fixa -->
+  <div style="height: 110px;"></div>
+
+  <!-- Banner da Exploração -->
+<section class="comunidade-banner">
+  <img src="./assets/banner-explorar" alt="Banner Explorar" />
+</section>
+
+
+  <main class="section">
+    <h1>Explorar Mangás</h1>
+
+    <!-- Gêneros populares -->
+    <section class="comunidade-bloco">
+      <h2>Gêneros Populares</h2>
+      <div class="carousel">
+        <a href="manga-isekan.html">
+        <img src="./assets/Whisk_0463a24078.jpg" alt="Isekan" />
+        </a>
+        <img src="./assets/acao.jpg" alt="Ação" />
+        <img src="./assets/romance.jpg" alt="Romance" />
+        <img src="./assets/terror.jpg" alt="Terror" />
+        <img src="./assets/comedia.jpg" alt="Comédia" />
+        <img src="./assets/fantasia.jpg" alt="Fantasia" />
+      </div>
+    </section>
+
+    <!-- Coleções especiais -->
+    <section class="comunidade-bloco">
+      <h2>Coleções Especiais</h2>
+      <div class="carousel">
+        <img src="./assets/classicos.jpg" alt="Clássicos" />
+        <img src="./assets/novidades.jpg" alt="Novidades" />
+        <img src="./assets/curtos.jpg" alt="Mangás Curtos" />
+        <img src="./assets/mais-votados.jpg" alt="Mais Votados" />
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar - MangaTide</title>
+
+  <!-- Font Awesome para ícones -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    body {
+      background-color: #121827;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-card {
+      background-color: #1f2433;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+      width: 90%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    .login-card h1 {
+      margin-bottom: 30px;
+      color: #00bfff;
+      text-align: center;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      color: #00bfff;
+      font-size: 1rem;
+      pointer-events: none;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 12px 12px 40px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      background-color: #2a2f42;
+      color: white;
+      box-sizing: border-box;
+    }
+
+    .input-group input::placeholder {
+      color: #ccc;
+    }
+
+    .login-card button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00bfff;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      color: #121827;
+    }
+
+    .login-card button:hover {
+      background-color: #0099ff;
+    }
+
+    @media (max-width: 400px) {
+      .login-card {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h1>Entrar no MangaTide</h1>
+
+    <div class="input-group">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" id="nome" placeholder="Nome de usuário" required />
+    </div>
+
+    <div class="input-group">
+      <i class="fa-solid fa-lock"></i>
+      <input type="password" id="senha" placeholder="Senha" required />
+    </div>
+
+    <button onclick="entrarConta()">Entrar</button>
+  </div>
+
+  <script>
+    function entrarConta() {
+      const nome = document.getElementById("nome").value.trim();
+      const senha = document.getElementById("senha").value.trim();
+
+      if (nome && senha) {
+        localStorage.setItem("usuarioNome", nome);
+        window.location.href = "inicio.html";
+      } else {
+        alert("Preencha todos os campos!");
+      }
+    }
+  </script>
+
+</body>
+</html>

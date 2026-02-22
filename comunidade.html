@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comunidade - MangaTide</title>
+  <link rel="stylesheet" href="./css/syle.css" />
+</head>
+<body>
+  <!-- Navbar (reutilizável, mesmo da index principal) -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="./assets/Captura_de_Tela__6_-removebg-preview.png" alt="Logo MangaTide" />
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="Inicio.html">Início</a></li>
+        <li><a href="#">Comunidade</a></li>
+        <li><a href="biblioteca.html">Biblioteca</a></li>
+        <li><a href="explorar.html">Explorar</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Espaço compensando navbar fixa -->
+  <div style="height: 110px;"></div>
+
+  <!-- Banner da Comunidade -->
+<section class="comunidade-banner">
+  <img src="./assets/banner-comunidade" alt="Banner da Comunidade MangaTide" />
+</section>
+
+
+  <!-- Conteúdo principal da página Comunidade -->
+  <main class="section">
+    <h1>Comunidade</h1>
+    
+    <!-- Seção de Fórum -->
+ <section class="comunidade-bloco">
+  <h2>Discussões Populares</h2>
+  <div class="forum-topicos">
+    
+    <div class="topico-card" onclick="location.href='./topico_capitulo50.html'" role="link" tabindex="0">
+  <h3>Capítulo 50 de “Poderes Proibidos” explodiu a mente de todos!</h3>
+  <p>Fãs analisam as revelações chocantes e como isso muda tudo a partir de agora.</p>
+  <div class="topico-info">
+    <span>🔥 120 respostas</span>
+    <span>👤 MangaQueen</span>
+  </div>
+</div>
+
+    <!-- Card 1 -->
+    <div class="topico-card">
+      <h3>Qual seu mangá favorito de 2025?</h3>
+      <p>Participe da votação da comunidade e comente o porquê da sua escolha.</p>
+      <div class="topico-info">
+        <span>📅 08/07/2025</span>
+        <span>💬 32 respostas</span>
+        <span>👤 por UsuárioX</span>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="topico-card">
+      <h3>Teorias sobre o final de "Last Stand"</h3>
+      <p>Compartilhe suas ideias, dúvidas e teorias malucas sobre o capítulo mais recente!</p>
+      <div class="topico-info">
+        <span>📅 06/07/2025</span>
+        <span>💬 58 respostas</span>
+        <span>👤 por MangaFan22</span>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="topico-card">
+      <h3>Indicações de mangás underrated</h3>
+      <p>Tem alguma pérola escondida que ninguém conhece? Poste aqui!</p>
+      <div class="topico-info">
+        <span>📅 03/07/2025</span>
+        <span>💬 12 respostas</span>
+        <span>👤 por OtakuOculto</span>
+      </div>
+    </div>
+
+   </div>
+ </section>
+
+
+    <!-- Seção de Comentários ou Discussões Populares -->
+    <section class="comunidade-bloco">
+  <h2>Discussões Populares</h2>
+  <div class="forum-topicos">
+    
+    <div class="topico-card">
+      <h3>Capítulo 50 de “Poderes Proibidos” explodiu a mente de todos!</h3>
+      <p>Fãs analisam as revelações chocantes e como isso muda tudo a partir de agora.</p>
+      <div class="topico-info">
+        <span>🔥 120 respostas</span>
+        <span>👤 MangaQueen</span>
+      </div>
+    </div>
+
+    <div class="topico-card">
+      <h3>Qual personagem merece um spin-off?</h3>
+      <p>A comunidade vota nos personagens secundários mais amados.</p>
+      <div class="topico-info">
+        <span>🔥 78 respostas</span>
+        <span>👤 FãClubeX</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Seção de Rankings ou Contribuidores -->
+    <section class="comunidade-bloco">
+  <h2>Top Contribuidores</h2>
+  <div class="contribuidores-lista">
+
+    <div class="contribuidor-card">
+      <h3>OtakuMestre</h3>
+      <p>✅ 243 posts | 💬 1.320 comentários | 🔥 Membro desde 2022</p>
+    </div>
+
+    <div class="contribuidor-card">
+      <h3>YukiFan</h3>
+      <p>✅ 180 posts | 💬 890 comentários | 🏆 3 eventos vencidos</p>
+    </div>
+
+    <div class="contribuidor-card">
+      <h3>ArtMangaka</h3>
+      <p>🎨 Destaque por fanarts incríveis nas últimas semanas!</p>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Seção de Eventos ou Notícias -->
+    <section class="comunidade-bloco">
+  <h2>Eventos da Comunidade</h2>
+  <div class="eventos-grid">
+
+    <div class="evento-card">
+      <h3>🎨 Concurso de Fanart</h3>
+      <p>Participe com sua arte até 15/07! Tema: “Universos Paralelos”.</p>
+    </div>
+
+    <div class="evento-card">
+      <h3>🗳️ Enquete: Melhor vilão</h3>
+      <p>Vote no antagonista mais memorável da temporada!</p>
+    </div>
+
+    <div class="evento-card">
+      <h3>📅 Clube de Leitura – Julho</h3>
+      <p>Discussão especial de “Last Stand” aos domingos no Discord.</p>
+    </div>
+
+  </div>
+</section>
+  </main>
+
+  <!-- Rodapé opcional -->
+  <footer class="section">
+    <p>&copy; 2025 MangaTide. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfil | MangaTide</title>
+  <link rel="stylesheet" href="./css/syle.css" />
+  <style>
+    /* Só o que é específico do perfil, pra garantir */
+    .perfil-card {
+      max-width: 600px;
+      background-color: #1f2433;
+      margin: 40px auto;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+      flex-wrap: wrap;
+    }
+
+    .perfil-foto {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00bfff;
+      background-color: #2a2f42;
+    }
+
+    .perfil-info {
+      flex: 1;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .perfil-info h2 {
+      color: #00bfff;
+      margin: 0;
+    }
+
+    .perfil-info p {
+      font-size: 1.1rem;
+      margin: 0;
+      color: #ccc;
+    }
+
+    #editarNomeArea {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    #editarNomeArea input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      background-color: #2a2f42;
+      color: white;
+    }
+
+    #editarNomeArea input:focus {
+      border: 1px solid #00bfff;
+      box-shadow: 0 0 8px #00bfff;
+    }
+
+    #editarNomeArea button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(135deg, #00bfff, #006bb3);
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
+
+    #editarNomeArea button:hover {
+      background: linear-gradient(135deg, #0099ff, #004f7c);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 191, 255, 0.5);
+    }
+
+    .botao-sair {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 150px;
+      align-self: start;
+      text-transform: uppercase;
+    }
+
+    .botao-sair:hover {
+      background-color: #e60000;
+    }
+
+    @media (max-width: 480px) {
+      .perfil-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .botao-sair {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="./assets/Captura_de_Tela__6_-removebg-preview.png" alt="Logo MangaTide" />
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="inicio.html">Início</a></li>
+        <li><a href="comunidade.html">Comunidade</a></li>
+        <li><a href="biblioteca.html">Biblioteca</a></li>
+        <li><a href="explorar.html">Explorar</a></li>
+        <li><a href="#" class="active">Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Espaço para navbar fixa -->
+  <div style="height: 110px;"></div>
+
+  <main class="section">
+    <h1 style="color: #00bfff; text-align: center;">Perfil</h1>
+
+    <div class="perfil-card">
+      <img src="./assets/anonimo" alt="Foto do Usuário" class="perfil-foto" id="fotoUsuario" />
+      
+      <div class="perfil-info">
+        <h2>Olá, <span id="perfil-nome">Usuário</span>!</h2>
+
+        <p>Nome de usuário: <span id="nomeUsuario">Carregando...</span></p>
+
+        <button id="editarNomeBtn">Editar Nome</button>
+
+        <div id="editarNomeArea" style="display: none;">
+          <input type="text" id="novoNome" placeholder="Digite novo nome" />
+          <button id="salvarNomeBtn">Salvar</button>
+          <button id="cancelarEdicaoBtn">Cancelar</button>
+        </div>
+
+        <button onclick="sairDaConta()" class="botao-sair">Sair da Conta</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Toggle menu hamburguer (se usa no site)
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    function carregarNomeUsuario() {
+      const nome = localStorage.getItem("usuarioNome") || "Usuário Anônimo";
+      document.getElementById("nomeUsuario").textContent = nome;
+      document.getElementById("perfil-nome").textContent = nome;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      carregarNomeUsuario();
+
+      const editarBtn = document.getElementById("editarNomeBtn");
+      const editarArea = document.getElementById("editarNomeArea");
+      const salvarBtn = document.getElementById("salvarNomeBtn");
+      const cancelarBtn = document.getElementById("cancelarEdicaoBtn");
+      const novoNomeInput = document.getElementById("novoNome");
+
+      editarBtn.addEventListener("click", () => {
+        editarArea.style.display = "flex";
+        novoNomeInput.value = localStorage.getItem("usuarioNome") || "";
+        novoNomeInput.focus();
+      });
+
+      salvarBtn.addEventListener("click", () => {
+        const novoNome = novoNomeInput.value.trim();
+        if (novoNome.length > 0) {
+          localStorage.setItem("usuarioNome", novoNome);
+          carregarNomeUsuario();
+          editarArea.style.display = "none";
+        } else {
+          alert("Nome não pode ser vazio!");
+        }
+      });
+
+      cancelarBtn.addEventListener("click", () => {
+        editarArea.style.display = "none";
+      });
+    });
+
+    function sairDaConta() {
+      localStorage.removeItem("usuarioNome");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

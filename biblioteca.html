@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca | MangaTide</title>
+  <link rel="stylesheet" href="./css/syle.css" />
+</head>
+<body>
+
+  <!-- Navbar fixa -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="./assets/Captura_de_Tela__6_-removebg-preview.png" alt="Logo MangaTide" />
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="Inicio.html">Início</a></li>
+        <li><a href="comunidade.html">Comunidade</a></li>
+        <li><a href="#" class="active">Biblioteca</a></li>
+        <li><a href="explorar.html">Explorar</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Espaço para compensar a navbar fixa -->
+  <div style="height: 110px;"></div>
+
+  <!-- Banner opcional da biblioteca -->
+  <section class="comunidade-banner">
+    <img src="./assets/banner-biblioteca" alt="Banner Biblioteca MangaTide" />
+  </section>
+
+  <!-- Conteúdo principal -->
+  <main class="section">
+
+    <!-- Título da página -->
+    <h1>Minha Biblioteca</h1>
+
+    <!-- Bloco de mangás salvos/lidos -->
+    <section class="comunidade-bloco">
+      <h2>Salvos para Ler Depois</h2>
+      <div class="biblioteca-grid">
+        <!-- 🔁 Substitua as imagens pelos mangás salvos -->
+        <a href="manga-isekan.html">
+        <img src="./assets/Whisk_0463a24078.jpg" alt="Isekan" />
+        </a>
+        <img src="./assets/Whisk_ed3529f41a.jpg" alt="Mangá Salvo 2" />
+        <img src="./assets/Whisk_89cc2301af.jpg" alt="Mangá Salvo 3" />
+        <!-- ... -->
+      </div>
+    </section>
+
+    <!-- Bloco de progresso de leitura -->
+    <section class="comunidade-bloco">
+      <h2>Progresso de Leitura</h2>
+      <div class="progresso-lista">
+        <!-- 🔁 Cada item é um mangá com progresso -->
+        <div class="progresso-item">
+          <strong>Last Stand</strong> — Capítulo 12 de 40
+        </div>
+        <div class="progresso-item">
+          <strong>Poderes Proibidos</strong> — Capítulo 28 de 50
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloco de favoritos -->
+    <section class="comunidade-bloco">
+      <h2>Favoritos</h2>
+      <div class="biblioteca-grid">
+        <img src="./assets/mangá8.jpg" alt="Mangá Favorito 1" />
+        <img src="./assets/Whisk_8ea0a5b2fe.jpg" alt="Mangá Favorito 2" />
+        <img src="./assets/Whisk_0463a24078.jpg" alt="Mangá Favorito 3" />
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
