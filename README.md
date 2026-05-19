@@ -16,7 +16,7 @@ Plataforma web focada em leitura e descoberta de mangás.
 - Navegação dinâmica
 
 ## Preview
-![Preview](mangatide.png)
+![Preview](/assets/mangatide.png)
 
 ## Acesse o projeto
 [🔗 Ver site](https://davidguimax.github.io/site-manga/)
